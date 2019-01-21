@@ -83,13 +83,13 @@ public class YatzyTest {
         assertEquals(9, Yatzy.threeOfAKind(3, 3, 3, 4, 5));
         assertEquals(15, Yatzy.threeOfAKind(5, 3, 5, 4, 5));
         assertEquals(9, Yatzy.threeOfAKind(3, 3, 3, 3, 5));
+        assertEquals(9, Yatzy.threeOfAKind(3, 3, 3, 3, 3));
     }
 
     @Test
     public void testFourOfAKind() {
         assertEquals(12, Yatzy.fourOfAKind(3, 3, 3, 3, 5));
         assertEquals(20, Yatzy.fourOfAKind(5, 5, 5, 4, 5));
-        assertEquals(9, Yatzy.threeOfAKind(3, 3, 3, 3, 3));
     }
 
     @Test
