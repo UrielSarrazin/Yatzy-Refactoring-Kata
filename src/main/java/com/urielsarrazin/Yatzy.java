@@ -197,30 +197,22 @@ public class Yatzy {
     }
 
     public int fours() {
-        int sum;
-        sum = 0;
-        for (int at = 0; at != 5; at++) {
-            if (dice[at] == 4) {
-                sum += 4;
-            }
-        }
-        return sum;
+        return fiveOfAKind(4);
     }
 
     public int fives() {
-        int s = 0;
-        int i;
-        for (i = 0; i < dice.length; i++)
-            if (dice[i] == 5)
-                s = s + 5;
-        return s;
+        return fiveOfAKind(5);
     }
 
     public int sixes() {
+        return fiveOfAKind(6);
+    }
+
+    private int fiveOfAKind(int kind) {
         int sum = 0;
-        for (int at = 0; at < dice.length; at++)
-            if (dice[at] == 6)
-                sum = sum + 6;
+        for (int i = 0; i < dice.length; i++)
+            if (dice[i] == kind)
+                sum += kind;
         return sum;
     }
 }
