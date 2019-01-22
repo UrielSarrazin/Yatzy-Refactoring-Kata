@@ -2,6 +2,8 @@ package com.urielsarrazin;
 
 public class Yatzy {
 
+    private static final int NB_DICES = 5;
+
     private int[] kindCardinalities;
 
     public Yatzy(int ... dices) {
@@ -12,14 +14,14 @@ public class Yatzy {
 
     public int chance() {
         int total = 0;
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i <= NB_DICES; i++)
             total += (i + 1) * kindCardinalities[i];
         return total;
     }
 
     public int yatzy() {
-        for (int i = 0; i != 6; i++)
-            if (kindCardinalities[i] == 5)
+        for (int i = 0; i <= NB_DICES; i++)
+            if (kindCardinalities[i] == NB_DICES)
                 return 50;
         return 0;
     }
@@ -33,24 +35,23 @@ public class Yatzy {
     }
 
     private int nOfAKind(int kind) {
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i <= NB_DICES; i++)
             if (kindCardinalities[i] >= kind)
                 return (i + 1) * kind;
         return 0;
     }
 
     public int onePair() {
-        int at;
-        for (at = 0; at != 6; at++)
-            if (kindCardinalities[6 - at - 1] >= 2)
-                return (6 - at) * 2;
+        for (int i = 0; i <= NB_DICES; i++)
+            if (kindCardinalities[6 - i - 1] >= 2)
+                return (6 - i) * 2;
         return 0;
     }
 
     public int twoPair() {
         int n = 0;
         int score = 0;
-        for (int i = 0; i < 6; i += 1)
+        for (int i = 0; i <= NB_DICES; i += 1)
             if (kindCardinalities[6 - i - 1] >= 2) {
                 n++;
                 score += (6 - i);
@@ -83,18 +84,17 @@ public class Yatzy {
 
     public int fullHouse() {
         boolean _2 = false;
-        int i;
         int _2_at = 0;
         boolean _3 = false;
         int _3_at = 0;
 
-        for (i = 0; i != 6; i += 1)
+        for (int i = 0; i <= NB_DICES; i++)
             if (kindCardinalities[i] == 2) {
                 _2 = true;
                 _2_at = i + 1;
             }
 
-        for (i = 0; i != 6; i += 1)
+        for (int i = 0; i <= NB_DICES; i += 1)
             if (kindCardinalities[i] == 3) {
                 _3 = true;
                 _3_at = i + 1;
