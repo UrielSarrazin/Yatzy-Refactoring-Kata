@@ -89,11 +89,11 @@ public class Yatzy {
             return 0;
     }
 
-    public static int fourOfAKind(int _1, int _2, int d3, int d4, int d5) {
+    public static int fourOfAKind(int d1, int d2, int d3, int d4, int d5) {
         int[] tallies;
         tallies = new int[6];
-        tallies[_1 - 1]++;
-        tallies[_2 - 1]++;
+        tallies[d1 - 1]++;
+        tallies[d2 - 1]++;
         tallies[d3 - 1]++;
         tallies[d4 - 1]++;
         tallies[d5 - 1]++;
