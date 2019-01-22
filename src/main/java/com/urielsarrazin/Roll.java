@@ -8,6 +8,12 @@ public abstract class Roll implements Scorable {
 
     public Roll(int... dices) {
         this.dicesValues = dices;
+        validate();
+    }
+
+    private void validate() {
+        if(dicesValues.length != 5)
+            throw new RollException(String.format("A roll must be composed of %d dices.", NB_OF_DICES));
     }
 
     protected int getOccurencesByKind(int kind) {
