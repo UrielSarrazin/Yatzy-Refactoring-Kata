@@ -1,19 +1,14 @@
 package com.urielsarrazin;
 
-public class SmallStraight extends Roll {
+public class SmallStraight extends Straight {
+
+    private static final int[] LARGE_STRAIGHT = { 1, 2, 3, 4, 5 };
 
     public SmallStraight(int... dices) {
         super(dices);
     }
 
     public int score() {
-        if (getOccurencesByKind(1) == 1 &&
-                getOccurencesByKind(2) == 1 &&
-                getOccurencesByKind(3) == 1 &&
-                getOccurencesByKind(4) == 1 &&
-                getOccurencesByKind(5) == 1)
-            return 15;
-        return 0;
+        return occurOnce(LARGE_STRAIGHT) ? 15 : 0;
     }
-
 }
