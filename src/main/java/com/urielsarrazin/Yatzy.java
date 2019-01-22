@@ -124,11 +124,8 @@ public class Yatzy {
 
     private int[] getTallies() {
         int[] tallies = new int[6];
-        tallies[dice[0] - 1]++;
-        tallies[dice[1] - 1]++;
-        tallies[dice[2] - 1]++;
-        tallies[dice[3] - 1]++;
-        tallies[dice[4] - 1]++;
+        for (int die : dice)
+            tallies[die - 1]++;
         return tallies;
     }
 
