@@ -10,5 +10,6 @@ public class FourOfAKindTest {
     public void testFourOfAKind() {
         assertEquals(12, new FourOfAKind(3, 3, 3, 3, 5).score());
         assertEquals(20, new FourOfAKind(5, 5, 5, 4, 5).score());
+        assertEquals(0, new FourOfAKind(5, 5, 5, 4, 3).score());
     }
 }
