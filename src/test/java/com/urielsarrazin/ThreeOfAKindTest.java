@@ -2,15 +2,15 @@ package com.urielsarrazin;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static com.urielsarrazin.Assert.areEqual;
 
 public class ThreeOfAKindTest {
 
     @Test
     public void testThreeOfAKind() {
-        assertEquals(9, new ThreeOfAKind(3, 3, 3, 4, 5).score());
-        assertEquals(15, new ThreeOfAKind(5, 3, 5, 4, 5).score());
-        assertEquals(9, new ThreeOfAKind(3, 3, 3, 3, 5).score());
-        assertEquals(9, new ThreeOfAKind(3, 3, 3, 3, 3).score());
+        areEqual(9, new ThreeOfAKind(3, 3, 3, 4, 5).score());
+        areEqual(15, new ThreeOfAKind(5, 3, 5, 4, 5).score());
+        areEqual(9, new ThreeOfAKind(3, 3, 3, 3, 5).score());
+        areEqual(9, new ThreeOfAKind(3, 3, 3, 3, 3).score());
     }
 }
