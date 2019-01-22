@@ -89,22 +89,22 @@ public class Yatzy {
             return 0;
     }
 
-    public static int fourOfAKind(int d1, int d2, int d3, int d4, int d5) {
-        return nOfAKind(d1, d2, d3, d4, d5, 4);
+    public int fourOfAKind() {
+        return nOfAKind(4);
     }
 
-    public static int threeOfAKind(int d1, int d2, int d3, int d4, int d5) {
-        return nOfAKind(d1, d2, d3, d4, d5, 3);
+    public int threeOfAKind() {
+        return nOfAKind(3);
     }
 
-    private static int nOfAKind(int d1, int d2, int d3, int d4, int d5, int kind) {
+    private int nOfAKind(int kind) {
         int[] tallies;
         tallies = new int[6];
-        tallies[d1 - 1]++;
-        tallies[d2 - 1]++;
-        tallies[d3 - 1]++;
-        tallies[d4 - 1]++;
-        tallies[d5 - 1]++;
+        tallies[dice[0] - 1]++;
+        tallies[dice[1] - 1]++;
+        tallies[dice[2] - 1]++;
+        tallies[dice[3] - 1]++;
+        tallies[dice[4] - 1]++;
         for (int i = 0; i < 6; i++)
             if (tallies[i] >= kind)
                 return (i + 1) * kind;
