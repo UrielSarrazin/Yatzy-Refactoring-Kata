@@ -33,25 +33,25 @@ public class Yatzy {
         return 0;
     }
 
-    public static int ones(int d1, int d2, int d3, int d4, int d5) {
-        return sumByKind(d1, d2, d3, d4, d5, 1);
+    public int ones() {
+        return sumByKind(1);
     }
 
-    public static int twos(int d1, int d2, int d3, int d4, int d5) {
-        return sumByKind(d1, d2, d3, d4, d5, 2);
+    public int twos() {
+        return sumByKind(2);
     }
 
-    public static int threes(int d1, int d2, int d3, int d4, int d5) {
-        return sumByKind(d1, d2, d3, d4, d5, 3);
+    public int threes() {
+        return sumByKind(3);
     }
 
-    private static int sumByKind(int d1, int d2, int d3, int d4, int d5, int kind) {
+    private int sumByKind(int kind) {
         int sum = 0;
-        if (d1 == kind) sum += kind;
-        if (d2 == kind) sum += kind;
-        if (d3 == kind) sum += kind;
-        if (d4 == kind) sum += kind;
-        if (d5 == kind) sum += kind;
+        if (dice[0] == kind) sum += kind;
+        if (dice[1] == kind) sum += kind;
+        if (dice[2] == kind) sum += kind;
+        if (dice[3] == kind) sum += kind;
+        if (dice[4] == kind) sum += kind;
         return sum;
     }
 
