@@ -1,6 +1,6 @@
 package com.urielsarrazin;
 
-public class FourOfAKind extends Roll {
+public class FourOfAKind extends NOfAKind {
 
     public FourOfAKind(int... dices) {
         super(dices);
