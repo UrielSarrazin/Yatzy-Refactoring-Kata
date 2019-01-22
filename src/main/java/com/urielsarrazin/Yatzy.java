@@ -33,28 +33,6 @@ public class Yatzy {
         return 0;
     }
 
-    public int ones() {
-        return sumByKind(1);
-    }
-
-    public int twos() {
-        return sumByKind(2);
-    }
-
-    public int threes() {
-        return sumByKind(3);
-    }
-
-    private int sumByKind(int kind) {
-        int sum = 0;
-        if (dice[0] == kind) sum += kind;
-        if (dice[1] == kind) sum += kind;
-        if (dice[2] == kind) sum += kind;
-        if (dice[3] == kind) sum += kind;
-        if (dice[4] == kind) sum += kind;
-        return sum;
-    }
-
     public static int onePair(int d1, int d2, int d3, int d4, int d5) {
         int[] counts = new int[6];
         counts[d1 - 1]++;
@@ -177,6 +155,18 @@ public class Yatzy {
             return _2_at * 2 + _3_at * 3;
         else
             return 0;
+    }
+
+    public int ones() {
+        return fiveOfAKind(1);
+    }
+
+    public int twos() {
+        return fiveOfAKind(2);
+    }
+
+    public int threes() {
+        return fiveOfAKind(3);
     }
 
     public int fours() {
