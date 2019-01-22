@@ -17,8 +17,4 @@ public abstract class Roll implements Scorable {
                 nbOfOccurences++;
         return nbOfOccurences;
     }
-
-    protected int fiveOfAKind(int kind) {
-        return getOccurencesByKind(kind) * kind;
-    }
 }
