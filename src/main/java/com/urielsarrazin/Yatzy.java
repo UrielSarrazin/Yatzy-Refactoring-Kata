@@ -2,33 +2,31 @@ package com.urielsarrazin;
 
 public class Yatzy {
 
-    protected int[] dice;
+    protected int[] dices;
 
     public Yatzy(int d1, int d2, int d3, int d4, int d5) {
-        dice = new int[5];
-        dice[0] = d1;
-        dice[1] = d2;
-        dice[2] = d3;
-        dice[3] = d4;
-        dice[4] = d5;
+        dices = new int[5];
+        dices[0] = d1;
+        dices[1] = d2;
+        dices[2] = d3;
+        dices[3] = d4;
+        dices[4] = d5;
     }
 
     public int chance() {
         int total = 0;
-        total += dice[0];
-        total += dice[1];
-        total += dice[2];
-        total += dice[3];
-        total += dice[4];
+        total += dices[0];
+        total += dices[1];
+        total += dices[2];
+        total += dices[3];
+        total += dices[4];
         return total;
     }
 
     public int yatzy() {
-        int[] counts = new int[6];
-        for (int die : dice)
-            counts[die - 1]++;
+        int[] tallies = getTallies();
         for (int i = 0; i != 6; i++)
-            if (counts[i] == 5)
+            if (tallies[i] == 5)
                 return 50;
         return 0;
     }
@@ -124,8 +122,8 @@ public class Yatzy {
 
     private int[] getTallies() {
         int[] tallies = new int[6];
-        for (int die : dice)
-            tallies[die - 1]++;
+        for (int dice : dices)
+            tallies[dice - 1]++;
         return tallies;
     }
 
@@ -155,8 +153,8 @@ public class Yatzy {
 
     private int fiveOfAKind(int kind) {
         int sum = 0;
-        for (int i = 0; i < dice.length; i++)
-            if (dice[i] == kind)
+        for (int i = 0; i < dices.length; i++)
+            if (dices[i] == kind)
                 sum += kind;
         return sum;
     }
